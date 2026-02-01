@@ -1,0 +1,454 @@
+/* AI Assistant Styles */
+
+.AIContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 100%);
+}
+
+/* Settings Overlay */
+.SettingsOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.SettingsCard {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(180deg, #1e1e3f 0%, #16213e 100%);
+  border-radius: 24px;
+  padding: 32px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.SettingsHeader {
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.SettingsTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.SettingsSubtitle {
+  font-size: 14px;
+  color: #8b92b4;
+}
+
+.SettingsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputGroup {
+  margin-bottom: 24px;
+}
+
+.InputLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c5c9e6;
+  margin-bottom: 8px;
+}
+
+.InputField {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.InputField::placeholder {
+  color: #5a5f7a;
+}
+
+.InputHint {
+  font-size: 11px;
+  color: #5a5f7a;
+  margin-top: 6px;
+}
+
+/* Model Options */
+.ModelOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ModelOption {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.ModelOption.selected {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: #8a2be2;
+}
+
+.ModelName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.ModelDesc {
+  font-size: 12px;
+  color: #8b92b4;
+}
+
+.ErrorMessage {
+  font-size: 13px;
+  color: #ff6b6b;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.SaveButton {
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #8a2be2 0%, #6a1fb5 100%);
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.SaveButton.disabled {
+  opacity: 0.5;
+}
+
+.SaveButtonText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Chat Header */
+.ChatHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.HeaderLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.AIIcon {
+  font-size: 32px;
+  margin-right: 12px;
+}
+
+.HeaderInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.AIName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.AIModel {
+  font-size: 11px;
+  color: #8b92b4;
+}
+
+.HeaderActions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.HeaderButton {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeaderButtonIcon {
+  font-size: 16px;
+}
+
+/* Error Banner */
+.ErrorBanner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 107, 107, 0.2);
+  border-bottom: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.ErrorBannerText {
+  flex: 1;
+  font-size: 13px;
+  color: #ff6b6b;
+}
+
+.ErrorBannerClose {
+  padding: 4px;
+}
+
+/* Messages Container */
+.MessagesContainer {
+  flex: 1;
+  padding: 16px 20px;
+}
+
+.MessagesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.MessagesSpacer {
+  height: 20px;
+}
+
+/* Empty State */
+.EmptyState {
+  align-items: center;
+  padding-top: 60px;
+}
+
+.EmptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.EmptyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.EmptySubtitle {
+  font-size: 14px;
+  color: #8b92b4;
+  margin-bottom: 24px;
+}
+
+.Suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.SuggestionChip {
+  padding: 12px 20px;
+  background: rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 20px;
+}
+
+.SuggestionText {
+  font-size: 13px;
+  color: #c5a0ff;
+}
+
+/* Message */
+.Message {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.Message.user {
+  flex-direction: row-reverse;
+}
+
+.MessageAvatar {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.Message.user .MessageAvatar {
+  margin-right: 0;
+  margin-left: 12px;
+  background: linear-gradient(135deg, #8a2be2 0%, #6a1fb5 100%);
+}
+
+.MessageAvatarIcon {
+  font-size: 16px;
+}
+
+.MessageContent {
+  flex: 1;
+  max-width: 80%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+}
+
+.Message.user .MessageContent {
+  background: linear-gradient(135deg, #8a2be2 0%, #6a1fb5 100%);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 4px;
+}
+
+.MessageHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.MessageAuthor {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8b92b4;
+}
+
+.Message.user .MessageAuthor {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.MessageTime {
+  font-size: 11px;
+  color: #5a5f7a;
+}
+
+.Message.user .MessageTime {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.MessageText {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Loading Message */
+.LoadingMessage {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.TypingIndicator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  gap: 4px;
+}
+
+.TypingDot {
+  width: 8px;
+  height: 8px;
+  background: #8b92b4;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.TypingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.TypingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Input Area */
+.InputArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.MessageInput {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.MessageInput::placeholder {
+  color: #5a5f7a;
+}
+
+.SendButton {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #8a2be2 0%, #6a1fb5 100%);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.SendButton.disabled {
+  opacity: 0.5;
+}
+
+.SendIcon {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.SendSpinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -19,6 +19,8 @@
 		5B89813C2F2EFFBC004FE877 /* ModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8981232F2EFFBC004FE877 /* ModuleRegistry.swift */; };
 		5B89813D2F2EFFBC004FE877 /* MiniAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8981222F2EFFBC004FE877 /* MiniAppViewController.swift */; };
 		5B89813E2F2EFFBC004FE877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8981252F2EFFBC004FE877 /* SceneDelegate.swift */; };
+		5BB1DDF92F2F3BE3002C6DCF /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1DDF82F2F3BE3002C6DCF /* DesignSystem.swift */; };
+		5BB1DDFA2F2F3BE3002C6DCF /* DESIGN_CRITIQUE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5BB1DDF72F2F3BE3002C6DCF /* DESIGN_CRITIQUE.md */; };
 		63972E0D34F86B0706325BCE /* libPods-Hello-Lynx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B67B2104D0445A811952B8 /* libPods-Hello-Lynx.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		5B8981262F2EFFBC004FE877 /* SuperAppLynxProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperAppLynxProvider.swift; sourceTree = "<group>"; };
 		5B8981272F2EFFBC004FE877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BB1DDD52F2F2AF3002C6DCF /* Hello-LynxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello-LynxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB1DDF72F2F3BE3002C6DCF /* DESIGN_CRITIQUE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN_CRITIQUE.md; sourceTree = "<group>"; };
+		5BB1DDF82F2F3BE3002C6DCF /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		61CE2062BA0F77A3DF32F268 /* Pods-Hello-Lynx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hello-Lynx.release.xcconfig"; path = "Target Support Files/Pods-Hello-Lynx/Pods-Hello-Lynx.release.xcconfig"; sourceTree = "<group>"; };
 		72043EE1F9E3529358168057 /* Pods-Hello-Lynx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hello-Lynx.debug.xcconfig"; path = "Target Support Files/Pods-Hello-Lynx/Pods-Hello-Lynx.debug.xcconfig"; sourceTree = "<group>"; };
 		C4B67B2104D0445A811952B8 /* libPods-Hello-Lynx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hello-Lynx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,8 @@
 		5B8981282F2EFFBC004FE877 /* Hello-Lynx */ = {
 			isa = PBXGroup;
 			children = (
+				5BB1DDF72F2F3BE3002C6DCF /* DESIGN_CRITIQUE.md */,
+				5BB1DDF82F2F3BE3002C6DCF /* DesignSystem.swift */,
 				5B8981182F2EFFBC004FE877 /* AppDelegate.swift */,
 				5B8981192F2EFFBC004FE877 /* Assets.xcassets */,
 				5B89811A2F2EFFBC004FE877 /* DemoLynxProvider.swift */,
@@ -233,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB1DDFA2F2F3BE3002C6DCF /* DESIGN_CRITIQUE.md in Resources */,
 				5B89812F2F2EFFBC004FE877 /* Main.storyboard in Resources */,
 				5B8981302F2EFFBC004FE877 /* Assets.xcassets in Resources */,
 				5B8981322F2EFFBC004FE877 /* LaunchScreen.storyboard in Resources */,
@@ -305,6 +312,7 @@
 				5B8981392F2EFFBC004FE877 /* AppDelegate.swift in Sources */,
 				5B89813A2F2EFFBC004FE877 /* DemoLynxProvider.swift in Sources */,
 				5B89813B2F2EFFBC004FE877 /* SuperAppLynxProvider.swift in Sources */,
+				5BB1DDF92F2F3BE3002C6DCF /* DesignSystem.swift in Sources */,
 				5B89813C2F2EFFBC004FE877 /* ModuleRegistry.swift in Sources */,
 				5B89813D2F2EFFBC004FE877 /* MiniAppViewController.swift in Sources */,
 				5B89813E2F2EFFBC004FE877 /* SceneDelegate.swift in Sources */,

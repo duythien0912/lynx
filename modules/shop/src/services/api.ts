@@ -5,6 +5,7 @@
 
 import { API_CONFIG } from '../utils/config.js';
 import type { Product, ProductResponse, Category, CartAddPayload, CartAddResponse } from '../models/Product.js';
+export type { Category };
 import type { User, LoginCredentials, LoginResponse } from '../models/User.js';
 
 // API Error class
@@ -94,8 +95,8 @@ export const ProductAPI = {
   /**
    * Get all categories
    */
-  getCategories: (): Promise<string[]> =>
-    apiClient<string[]>('/products/categories'),
+  getCategories: (): Promise<Category[]> =>
+    apiClient<Category[]>('/products/categories'),
 
   /**
    * Get products by category

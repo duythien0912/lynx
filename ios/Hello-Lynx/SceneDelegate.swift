@@ -26,13 +26,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         moduleRegistry.register(name: "profile", loader: { [weak self] in
             return self?.loadModule(named: "profile")
         })
+        moduleRegistry.register(name: "crypto-wallet", loader: { [weak self] in
+            return self?.loadModule(named: "crypto-wallet")
+        })
+        moduleRegistry.register(name: "ai-assistant", loader: { [weak self] in
+            return self?.loadModule(named: "ai-assistant")
+        })
         
         // Start hot update checking
         hotUpdateManager.startChecking(registry: moduleRegistry)
         
         // Create window with scene
         window = UIWindow(windowScene: windowScene)
-        let rootVC = RootViewController(registry: moduleRegistry)
+        let rootVC = RootViewController()
         let navController = UINavigationController(rootViewController: rootVC)
         navController.navigationBar.isHidden = true
         window?.rootViewController = navController

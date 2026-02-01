@@ -135,21 +135,18 @@ export function HomeScreen({ store, onNavigate }: HomeScreenProps) {
             >
               <text className="category-pill-text" accessibility-id="shop-category-all-text">All</text>
             </view>
-            {categories.map((category, index) => {
-              const categoryName = typeof category === 'string' ? category : String(category);
-              return (
-                <view
-                  key={categoryName}
-                  className={`category-pill ${currentCategory === categoryName ? 'active' : ''}`}
-                  bindtap={() => fetchProductsByCategory(categoryName)}
-                  accessibility-id={`shop-category-${index}`}
-                >
-                  <text className="category-pill-text" accessibility-id={`shop-category-text-${index}`}>
-                    {categoryName.replace(/-/g, ' ')}
-                  </text>
-                </view>
-              );
-            })}
+            {categories.map((category, index) => (
+              <view
+                key={category.slug}
+                className={`category-pill ${currentCategory === category.slug ? 'active' : ''}`}
+                bindtap={() => fetchProductsByCategory(category.slug)}
+                accessibility-id={`shop-category-${index}`}
+              >
+                <text className="category-pill-text" accessibility-id={`shop-category-text-${index}`}>
+                  {category.name}
+                </text>
+              </view>
+            ))}
           </view>
         </scroll-view>
       </view>

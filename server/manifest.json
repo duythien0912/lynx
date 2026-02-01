@@ -19,6 +19,18 @@
       "version": "1.0.0",
       "url": "http://localhost:8080/wallet.lynx.bundle",
       "hash": "fdb0195d1499bd8732dc03c297e422a5"
+    },
+    {
+      "name": "crypto-wallet",
+      "version": "1.0.0",
+      "url": "http://localhost:8080/crypto-wallet.lynx.bundle",
+      "hash": "f0531eba841aa7ffbe999c1e98d0eb75"
+    },
+    {
+      "name": "ai-assistant",
+      "version": "1.0.0",
+      "url": "http://localhost:8080/ai-assistant.lynx.bundle",
+      "hash": "9865402dac0a806662c03fb1fa329009"
     }
   ]
 }

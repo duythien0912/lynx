@@ -4,7 +4,7 @@
  */
 
 import { useState, useCallback, useEffect } from '@lynx-js/react';
-import type { Product, Cart, CartItem } from '../models/Product.js';
+import type { Product, Cart, CartItem, Category } from '../models/Product.js';
 import type { User, AuthState } from '../models/User.js';
 import { Storage } from '../utils/storage.js';
 import { API_CONFIG } from '../utils/config.js';
@@ -87,7 +87,7 @@ export function createStore() {
   // Product State
   const [products, setProducts] = useState<Product[]>([]);
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [currentCategory, setCurrentCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isLoadingProducts, setIsLoadingProducts] = useState(false);
@@ -177,7 +177,13 @@ export function createStore() {
   const fetchCategories = useCallback(async () => {
     try {
       if (API_CONFIG.MOCK_MODE) {
-        setCategories(MockData.categories);
+        // Convert mock string array to Category objects
+        const mockCategories: Category[] = MockData.categories.map(cat => ({
+          slug: cat,
+          name: cat.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+          url: `${API_CONFIG.BASE_URL}/products/category/${cat}`
+        }));
+        setCategories(mockCategories);
       } else {
         const cats = await ProductAPI.getCategories();
         setCategories(cats);
