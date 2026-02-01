@@ -1,0 +1,171 @@
+.Profile {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.Header {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.Title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.LogoutText {
+  font-size: 14px;
+  color: #FF3B30;
+  font-weight: 600;
+}
+
+.ProfileCard {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.Avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #007AFF, #5856D6);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.AvatarText {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+}
+
+.UserName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.UserEmail {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.MemberSince {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.StatsRow {
+  flex-direction: row;
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.StatItem {
+  flex: 1;
+  align-items: center;
+}
+
+.StatValue {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007AFF;
+}
+
+.StatLabel {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.StatDivider {
+  width: 1px;
+  background-color: #eee;
+}
+
+.Menu {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.MenuItem {
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  border-bottom-width: 1px;
+  border-bottom-color: #eee;
+}
+
+.MenuIcon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.MenuText {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.MenuArrow {
+  font-size: 20px;
+  color: #999;
+}
+
+.LogoutButton {
+  background-color: #FF3B30;
+  border-radius: 12px;
+  padding: 16px;
+  align-items: center;
+}
+
+.LogoutButtonText {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.LoginContainer {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+.LoginTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.LoginSubtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.LoginButton {
+  background-color: #007AFF;
+  border-radius: 12px;
+  padding: 16px 48px;
+}
+
+.ButtonText {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}

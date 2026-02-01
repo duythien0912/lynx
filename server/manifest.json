@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "timestamp": 1769923486,
+  "modules": [
+    {
+      "name": "profile",
+      "version": "1.0.0",
+      "url": "http://localhost:8080/profile.lynx.bundle",
+      "hash": "84f7c600080e74ca07aefc22301dd464"
+    },
+    {
+      "name": "shop",
+      "version": "1.0.0",
+      "url": "http://localhost:8080/shop.lynx.bundle",
+      "hash": "5089ea9c7b67c45d4efe7ef834298c6f"
+    },
+    {
+      "name": "wallet",
+      "version": "1.0.0",
+      "url": "http://localhost:8080/wallet.lynx.bundle",
+      "hash": "fdb0195d1499bd8732dc03c297e422a5"
+    }
+  ]
+}
