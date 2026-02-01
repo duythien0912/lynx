@@ -2,8 +2,7 @@
 //  MiniAppViewController.swift
 //  Hello-Lynx
 //
-//  Fixed back screen flash issue
-//  Clean, simple navigation
+//  iOS 26 style - Glass morphism, floating buttons
 //
 
 import UIKit
@@ -78,17 +77,39 @@ class MiniAppViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
         
-        // Style navigation bar
+        // iOS 26 style - Glass morphism navigation bar
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = AppColors.cardWhite
-        appearance.shadowColor = nil
+        appearance.configureWithTransparentBackground()
+        
+        // Glass effect background
+        appearance.backgroundEffect = UIBlurEffect(style: .systemMaterial)
+        appearance.backgroundColor = UIColor.systemBackground.withAlphaComponent(0.7)
+        
+        // Remove shadow line
+        appearance.shadowColor = .clear
+        
+        // Large title style
+        appearance.titleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 20, weight: .semibold),
+            .foregroundColor: UIColor.label
+        ]
+        
+        // Large title for scroll edge
+        appearance.largeTitleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 34, weight: .bold),
+            .foregroundColor: UIColor.label
+        ]
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
+        
+        // Enable large titles
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        // Show navigation bar
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,26 +121,41 @@ class MiniAppViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = AppColors.backgroundPrimary
         
-        // Configure navigation bar
+        // Title
         title = displayTitle(for: moduleName)
         
-        // Back button
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.left"),
-            style: .plain,
-            target: self,
-            action: #selector(backTapped)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = AppColors.brandPrimary
+        // Mini style - Small floating back button (28x28)
+        let backConfig = UIImage.SymbolConfiguration(pointSize: 11, weight: .medium)
+        let backImage = UIImage(systemName: "chevron.left", withConfiguration: backConfig)
         
-        // Reload button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "arrow.clockwise"),
-            style: .plain,
-            target: self,
-            action: #selector(reloadTapped)
-        )
-        navigationItem.rightBarButtonItem?.tintColor = AppColors.brandPrimary
+        let backButton = UIButton(type: .system)
+        backButton.setImage(backImage, for: .normal)
+        backButton.tintColor = .label
+        backButton.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        backButton.layer.cornerRadius = 14
+        backButton.layer.cornerCurve = .continuous
+        backButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backBarButton
+
+        // Mini style - Small reload button (28x28)
+        let reloadConfig = UIImage.SymbolConfiguration(pointSize: 11, weight: .medium)
+        let reloadImage = UIImage(systemName: "arrow.clockwise", withConfiguration: reloadConfig)
+        
+        let reloadButton = UIButton(type: .system)
+        reloadButton.setImage(reloadImage, for: .normal)
+        reloadButton.tintColor = .label
+        reloadButton.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        reloadButton.layer.cornerRadius = 14
+        reloadButton.layer.cornerCurve = .continuous
+        reloadButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        reloadButton.addTarget(self, action: #selector(reloadTapped), for: .touchUpInside)
+        
+        let reloadBarButton = UIBarButtonItem(customView: reloadButton)
+        navigationItem.rightBarButtonItem = reloadBarButton
+        navigationItem.rightBarButtonItem = reloadBarButton
     }
     
     private func displayTitle(for module: String) -> String {
@@ -207,13 +243,21 @@ class MiniAppViewController: UIViewController {
     // MARK: - Actions
     @objc private func backTapped() {
         Haptic.light()
-        
-        // Simple pop - no custom animation that causes flash
         navigationController?.popViewController(animated: true)
     }
     
     @objc private func reloadTapped() {
         Haptic.medium()
+        
+        // Rotate animation
+        if let button = navigationItem.rightBarButtonItem?.customView as? UIButton {
+            UIView.animate(withDuration: 0.5) {
+                button.transform = CGAffineTransform(rotationAngle: .pi * 2)
+            } completion: { _ in
+                button.transform = .identity
+            }
+        }
+        
         loadModule()
     }
 }
