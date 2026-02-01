@@ -34,12 +34,12 @@ export function App(props: { onRender?: () => void }) {
 
   if (!user.isLoggedIn) {
     return (
-      <view className='Profile'>
-        <view className='LoginContainer'>
-          <text className='LoginTitle'>Welcome Back</text>
-          <text className='LoginSubtitle'>Sign in to access your profile</text>
-          <view className='LoginButton' bindtap={handleLogin}>
-            <text className='ButtonText'>Login</text>
+      <view className='Profile' accessibility-id="profile-container">
+        <view className='LoginContainer' accessibility-id="profile-login-prompt">
+          <text className='LoginTitle' accessibility-id="profile-login-title">Welcome Back</text>
+          <text className='LoginSubtitle' accessibility-id="profile-login-subtitle">Sign in to access your profile</text>
+          <view className='LoginButton' bindtap={handleLogin} accessibility-id="profile-login-btn">
+            <text className='ButtonText' accessibility-id="profile-login-btn-text">Login</text>
           </view>
         </view>
       </view>
@@ -47,58 +47,58 @@ export function App(props: { onRender?: () => void }) {
   }
 
   return (
-    <view className='Profile'>
-      <view className='Header'>
-        <text className='Title'>Profile</text>
-        <text className='LogoutText' bindtap={handleLogout}>Logout</text>
+    <view className='Profile' accessibility-id="profile-container">
+      <view className='Header' accessibility-id="profile-header">
+        <text className='Title' accessibility-id="profile-title">Profile</text>
+        <text className='LogoutText' bindtap={handleLogout} accessibility-id="profile-logout-text">Logout</text>
       </view>
 
-      <view className='ProfileCard'>
-        <view className='Avatar'>
-          <text className='AvatarText'>{user.name.charAt(0)}</text>
+      <view className='ProfileCard' accessibility-id="profile-card">
+        <view className='Avatar' accessibility-id="profile-avatar">
+          <text className='AvatarText' accessibility-id="profile-avatar-text">{user.name.charAt(0)}</text>
         </view>
-        <text className='UserName'>{user.name}</text>
-        <text className='UserEmail'>{user.email}</text>
-        <text className='MemberSince'>Member since {user.memberSince}</text>
+        <text className='UserName' accessibility-id="profile-name">{user.name}</text>
+        <text className='UserEmail' accessibility-id="profile-email">{user.email}</text>
+        <text className='MemberSince' accessibility-id="profile-member-since">Member since {user.memberSince}</text>
       </view>
 
-      <view className='StatsRow'>
-        <view className='StatItem'>
-          <text className='StatValue'>{user.orders}</text>
-          <text className='StatLabel'>Orders</text>
+      <view className='StatsRow' accessibility-id="profile-stats">
+        <view className='StatItem' accessibility-id="profile-orders-stat">
+          <text className='StatValue' accessibility-id="profile-orders-count">{user.orders}</text>
+          <text className='StatLabel' accessibility-id="profile-orders-label">Orders</text>
         </view>
-        <view className='StatDivider' />
-        <view className='StatItem'>
-          <text className='StatValue'>{user.points}</text>
-          <text className='StatLabel'>Points</text>
-        </view>
-      </view>
-
-      <view className='Menu'>
-        <view className='MenuItem' bindtap={() => {}}>
-          <text className='MenuIcon'>📦</text>
-          <text className='MenuText'>My Orders</text>
-          <text className='MenuArrow'>›</text>
-        </view>
-        <view className='MenuItem' bindtap={() => {}}>
-          <text className='MenuIcon'>❤️</text>
-          <text className='MenuText'>Wishlist</text>
-          <text className='MenuArrow'>›</text>
-        </view>
-        <view className='MenuItem' bindtap={() => {}}>
-          <text className='MenuIcon'>⚙️</text>
-          <text className='MenuText'>Settings</text>
-          <text className='MenuArrow'>›</text>
-        </view>
-        <view className='MenuItem' bindtap={() => {}}>
-          <text className='MenuIcon'>❓</text>
-          <text className='MenuText'>Help & Support</text>
-          <text className='MenuArrow'>›</text>
+        <view className='StatDivider' accessibility-id="profile-stat-divider" />
+        <view className='StatItem' accessibility-id="profile-points-stat">
+          <text className='StatValue' accessibility-id="profile-points-count">{user.points}</text>
+          <text className='StatLabel' accessibility-id="profile-points-label">Points</text>
         </view>
       </view>
 
-      <view className='LogoutButton' bindtap={handleLogout}>
-        <text className='LogoutButtonText'>Logout</text>
+      <view className='Menu' accessibility-id="profile-menu">
+        <view className='MenuItem' bindtap={() => {}} accessibility-id="profile-orders-menu">
+          <text className='MenuIcon' accessibility-id="profile-orders-icon">📦</text>
+          <text className='MenuText' accessibility-id="profile-orders-text">My Orders</text>
+          <text className='MenuArrow' accessibility-id="profile-orders-arrow">›</text>
+        </view>
+        <view className='MenuItem' bindtap={() => {}} accessibility-id="profile-wishlist-menu">
+          <text className='MenuIcon' accessibility-id="profile-wishlist-icon">❤️</text>
+          <text className='MenuText' accessibility-id="profile-wishlist-text">Wishlist</text>
+          <text className='MenuArrow' accessibility-id="profile-wishlist-arrow">›</text>
+        </view>
+        <view className='MenuItem' bindtap={() => {}} accessibility-id="profile-settings-menu">
+          <text className='MenuIcon' accessibility-id="profile-settings-icon">⚙️</text>
+          <text className='MenuText' accessibility-id="profile-settings-text">Settings</text>
+          <text className='MenuArrow' accessibility-id="profile-settings-arrow">›</text>
+        </view>
+        <view className='MenuItem' bindtap={() => {}} accessibility-id="profile-help-menu">
+          <text className='MenuIcon' accessibility-id="profile-help-icon">❓</text>
+          <text className='MenuText' accessibility-id="profile-help-text">Help & Support</text>
+          <text className='MenuArrow' accessibility-id="profile-help-arrow">›</text>
+        </view>
+      </view>
+
+      <view className='LogoutButton' bindtap={handleLogout} accessibility-id="profile-logout-btn">
+        <text className='LogoutButtonText' accessibility-id="profile-logout-btn-text">Logout</text>
       </view>
     </view>
   )

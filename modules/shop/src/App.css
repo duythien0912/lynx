@@ -1,151 +1,176 @@
-.Shop {
+/*
+ * Shop MiniApp - Global Styles
+ * E-commerce Demo with DummyJSON API
+ */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.AppContainer {
+  width: 100%;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Common Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
   flex: 1;
-  background-color: #f5f5f5;
-  padding: 20px;
 }
 
-.Header {
-  flex-direction: row;
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
 }
 
-.Title {
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
+.gap-4 {
+  gap: 4px;
 }
 
-.CartBadge {
-  background-color: #FF3B30;
-  border-radius: 12px;
-  min-width: 24px;
-  padding: 4px 8px;
-  align-items: center;
+.gap-8 {
+  gap: 8px;
 }
 
-.CartCount {
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.ProductGrid {
-  flex-direction: row;
-  flex-wrap: wrap;
+.gap-12 {
   gap: 12px;
 }
 
-.ProductCard {
-  width: 48%;
-  background-color: white;
-  border-radius: 12px;
-  padding: 16px;
-  align-items: center;
+.gap-16 {
+  gap: 16px;
 }
 
-.ProductCardEmoji {
-  font-size: 48px;
-  margin-bottom: 8px;
-}
-
-.ProductCardName {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
+/* Text Utilities */
+.text-center {
   text-align: center;
 }
 
-.ProductCardPrice {
-  font-size: 16px;
-  color: #007AFF;
+.font-bold {
   font-weight: bold;
-  margin-top: 4px;
 }
 
-.BackButton {
-  font-size: 16px;
-  color: #007AFF;
-  padding: 10px 0;
+.font-semibold {
+  font-weight: 600;
 }
 
-.ProductDetail {
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+.font-medium {
+  font-weight: 500;
 }
 
-.ProductEmoji {
-  font-size: 80px;
-  margin-bottom: 20px;
+/* Spacing Utilities */
+.p-12 {
+  padding: 12px;
 }
 
-.ProductName {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.p-16 {
+  padding: 16px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+.m-12 {
+  margin: 12px;
+}
+
+.m-16 {
+  margin: 16px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-8 {
   margin-bottom: 8px;
 }
 
-.ProductPrice {
-  font-size: 28px;
-  color: #007AFF;
-  font-weight: bold;
-  margin-bottom: 30px;
+.mb-12 {
+  margin-bottom: 12px;
 }
 
-.DetailActions {
-  flex-direction: row;
-  gap: 12px;
-  width: 100%;
+.mb-16 {
+  margin-bottom: 16px;
 }
 
-.AddToCartButton {
-  flex: 1;
-  background-color: #5856D6;
-  border-radius: 12px;
-  padding: 16px;
-  align-items: center;
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.BuyNowButton {
-  flex: 1;
-  background-color: #34C759;
-  border-radius: 12px;
-  padding: 16px;
-  align-items: center;
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
 }
 
-.CartBar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px 20px;
-  background-color: white;
-  border-top-width: 1px;
-  border-top-color: #eee;
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
-.CartTotal {
-  flex: 1;
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.CheckoutButton {
-  background-color: #007AFF;
-  border-radius: 8px;
-  padding: 12px 20px;
+/* Card Shadow */
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.ButtonText {
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+/* Safe Area for iOS */
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Scrollbar Hide */
+.scrollbar-hide {
+  overflow: hidden;
 }

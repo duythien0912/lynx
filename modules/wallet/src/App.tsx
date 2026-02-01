@@ -44,42 +44,43 @@ export function App(props: { onRender?: () => void }) {
   const formatAmount = (amount: number) => `$${amount.toFixed(2)}`
 
   return (
-    <view className='Wallet'>
-      <view className='Header'>
-        <text className='Title'>Wallet</text>
+    <view className='Wallet' accessibility-id="wallet-container">
+      <view className='Header' accessibility-id="wallet-header">
+        <text className='Title' accessibility-id="wallet-title">Wallet</text>
       </view>
       
-      <view className='BalanceCard'>
-        <text className='BalanceLabel'>Current Balance</text>
-        <text className='BalanceAmount'>{formatAmount(balance)}</text>
+      <view className='BalanceCard' accessibility-id="wallet-balance-card">
+        <text className='BalanceLabel' accessibility-id="wallet-balance-label">Current Balance</text>
+        <text className='BalanceAmount' accessibility-id="wallet-balance-amount">{formatAmount(balance)}</text>
       </view>
 
-      <view className='Actions'>
-        <view className='PaySection'>
+      <view className='Actions' accessibility-id="wallet-actions">
+        <view className='PaySection' accessibility-id="wallet-pay-section">
           <input 
             className='AmountInput'
             type='number'
             placeholder='25'
+            accessibility-id="wallet-amount-input"
             bindinput={(e: { detail: { value: string } }) => setPayAmount(e.detail.value)}
           />
-          <view className='PayButton' bindtap={handlePay}>
-            <text className='ButtonText'>Pay</text>
+          <view className='PayButton' bindtap={handlePay} accessibility-id="wallet-pay-btn">
+            <text className='ButtonText' accessibility-id="wallet-pay-btn-text">Pay</text>
           </view>
         </view>
-        <view className='AddButton' bindtap={handleAddFunds}>
-          <text className='ButtonText'>+ $100</text>
+        <view className='AddButton' bindtap={handleAddFunds} accessibility-id="wallet-add-btn">
+          <text className='ButtonText' accessibility-id="wallet-add-btn-text">+ $100</text>
         </view>
       </view>
 
-      <text className='SectionTitle'>Recent Transactions</text>
-      <view className='Transactions'>
-        {transactions.map(tx => (
-          <view key={tx.id} className='TransactionItem'>
-            <view className='TxInfo'>
-              <text className='TxDesc'>{tx.desc}</text>
-              <text className='TxTime'>{tx.time}</text>
+      <text className='SectionTitle' accessibility-id="wallet-transactions-title">Recent Transactions</text>
+      <view className='Transactions' accessibility-id="wallet-transactions-list">
+        {transactions.map((tx, index) => (
+          <view key={tx.id} className='TransactionItem' accessibility-id={`wallet-tx-${index}`}>
+            <view className='TxInfo' accessibility-id={`wallet-tx-info-${index}`}>
+              <text className='TxDesc' accessibility-id={`wallet-tx-desc-${index}`}>{tx.desc}</text>
+              <text className='TxTime' accessibility-id={`wallet-tx-time-${index}`}>{tx.time}</text>
             </view>
-            <text className={`TxAmount ${tx.type}`}>
+            <text className={`TxAmount ${tx.type}`} accessibility-id={`wallet-tx-amount-${index}`}>
               {tx.type === 'in' ? '+' : '-'}{formatAmount(tx.amount)}
             </text>
           </view>

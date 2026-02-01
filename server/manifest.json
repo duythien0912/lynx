@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "timestamp": 1769923486,
+  "timestamp": 1769926843,
   "modules": [
     {
       "name": "profile",
@@ -12,7 +12,7 @@
       "name": "shop",
       "version": "1.0.0",
       "url": "http://localhost:8080/shop.lynx.bundle",
-      "hash": "5089ea9c7b67c45d4efe7ef834298c6f"
+      "hash": "c56896671f33b39598594785caedb342"
     },
     {
       "name": "wallet",
